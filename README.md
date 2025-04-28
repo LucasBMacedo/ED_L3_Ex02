@@ -1,21 +1,55 @@
-2. Criar uma aplicação em Java que tenha uma função recursiva que, recebendo um número inteiro de 10a 999999 e recebendo um 2o número inteiro (de 0 a 9),
-tenha uma função recursiva que apresente quantas vezes o 2o número aparece no primeiro.
-• Exemplo 1: Primeiro Número = 523578; Segundo Número = 5; retorno aparece 2 vezes;
-• Exemplo 2: Primeiro Número = 836363; Segundo Número = 3; retorno aparece 3 vezes;
-• A validação da entrada e do dígito devem ser feito na main da aplicação e não na função recursiva;
-• O Código deve apresentar, em formato de comentário, como foi definida a condição de parada;
-• O Código deve apresentar, em formato de comentário, como foi definida a relação de chamada dos passos;
+📁 Projeto: Contagem de Dígitos Específicos (Recursivo)
 
-Dica para a resolução do exercício:
+📌 Descrição: >
+  Aplicação em Java que recebe dois números inteiros:
+  - Um número principal entre 10 e 999999
+  - Um número entre 0 e 9
+  A função recursiva calcula quantas vezes o segundo número aparece no primeiro.
 
-Exemplo: Número 1234
-1234 / 10 = 123 com resto 4
-123 / 10 = 12 com resto 3
-12 / 10 = 1 com resto 2
-1 / 10 = 0 com resto 1
+🗂️ Estrutura de Arquivos:
 
-Exemplo: Número 8647
-8647 / 10 = 864 com resto 7
-864 / 10 = 86 com resto 4
-86 / 10 = 8 com resto 6
-8 / 10 = 0 com resto 8
+📄 src/controller/Qtdnumerosegundo.java:
+  - Contém a função recursiva responsável por contar a quantidade de vezes que o segundo número aparece no primeiro.
+
+📄 src/viewer/Principal.java:
+  - Responsável pela interação com o usuário (entrada via JOptionPane) e exibição do resultado.
+
+🧠 Lógica da Recursividade:
+
+método: qtdN2(int n1, int n2)
+explicação:
+  - ✋ Condição de parada: Quando `n1 == 0`, significa que todos os dígitos foram verificados e a função retorna 0.
+  - 🔁 Relação recursiva: Verifica se o último dígito (`n1 % 10`) é igual a `n2`, soma 1 se for, e chama recursivamente `qtdN2(n1/10, n2)` para o restante dos dígitos.
+
+💬 Exemplos de Execução:
+
+entrada:
+  - Primeiro número: 523578
+  - Segundo número: 5
+saída:
+  - A quantidade de vezes que o número 5 aparece em 523578 é: 2
+
+entrada:
+  - Primeiro número: 836363
+  - Segundo número: 3
+saída:
+  - A quantidade de vezes que o número 3 aparece em 836363 é: 3
+
+📥 Entrada:
+
+- O usuário insere dois números via JOptionPane:
+  - Primeiro número: um inteiro de 10 a 999999
+  - Segundo número: um inteiro de 0 a 9
+- A entrada é validada na `main` (não na função recursiva).
+
+📤 Saída:
+
+- Exibe, via JOptionPane, quantas vezes o segundo número aparece no primeiro.
+
+📌 Observações:
+
+- A cada chamada recursiva, o número principal (`n1`) é dividido por 10 para remover o último dígito.
+- Verificação direta do último dígito usando módulo (`%`).
+- Código modular, limpo e bem comentado para facilitar o entendimento e a manutenção.
+
+👨‍💻 Autor: Criado por Lucas Bezerra de Macedo.
